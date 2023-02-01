@@ -1,9 +1,15 @@
 import React from "react"
 
 import { motion } from "framer-motion"
-import { Abstract, Description, MyInfoContainer, Name } from "./styles"
-import { ButtonDownloadCurriculum } from "../styles"
+import {
+  Abstract,
+  Description,
+  MyInfoContainer,
+  Name,
+  ButtonDownloadCurriculum,
+} from "./styles"
 import { ReactComponent as DownloadIcon } from "../../../assets/svg/downloadIcon.svg"
+import curriculumFile from "../../../assets/curriculoAtualizado.pdf"
 
 const ProfileInfo = () => {
   return (
@@ -23,7 +29,10 @@ const ProfileInfo = () => {
           essentially unchanged. It was popularised in the 1960s with the release of Letraset
           sheets containing Lorem
         </Abstract>
-        <ButtonDownloadCurriculum>
+        <ButtonDownloadCurriculum
+          href={curriculumFile}
+          download="Curriculum"
+        >
           Download CV
           <DownloadIcon />
         </ButtonDownloadCurriculum>

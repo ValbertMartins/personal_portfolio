@@ -2,6 +2,7 @@ import styled, { keyframes } from "styled-components"
 import { ThemeProps } from "../../Interface/IThemeProps"
 import circle_background from "../../assets/images/circle_background.png"
 import circle_background_one from "../../assets/images/circle_background_one.png"
+import circle_background_mobile from "../../assets/images/circle_background_mobile.png"
 
 const AnimateCircles = keyframes`
   50% {
@@ -14,7 +15,7 @@ const AnimateCircles = keyframes`
 `
 export const HomeContainer = styled.section`
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background-color: ${({ theme }: { theme: ThemeProps }) => theme.colors.BACKGROUND_COLOR};
   background-image: url(${circle_background}), url(${circle_background_one});
   background-repeat: no-repeat;
@@ -22,12 +23,20 @@ export const HomeContainer = styled.section`
   /* animation: ${AnimateCircles} linear infinite; */
   background-size: 10%, 10%;
   animation-duration: 5s;
+  @media (max-width: 580px) {
+    background-image: url(${circle_background_mobile});
+    background-position: left top;
+    background-size: inherit;
+  }
 `
 export const ContainerContent = styled.div`
   max-width: 1000px;
   margin: 0rem auto;
   @media (max-width: 1025px) {
     max-width: 700px;
+  }
+  @media (max-width: 710px) {
+    max-width: 580px;
   }
 `
 
@@ -49,37 +58,23 @@ export const PersonalInfoContainer = styled.div`
   justify-content: space-between;
   margin: 5rem 0;
   align-items: center;
+
   @media (max-width: 1025px) {
     justify-content: center;
+  }
+  @media (max-width: 580px) {
+    flex-direction: column-reverse;
   }
 `
 
 export const PeopleIllustration = styled.img`
   @media (max-width: 1025px) {
-    width: 70%;
+    max-width: 70%;
     display: block;
     margin: 0 auto;
   }
-`
-
-export const ButtonDownloadCurriculum = styled.button`
-  border: none;
-  outline: none;
-  background-color: ${({ theme }: { theme: ThemeProps }) => theme.colors.PRIMARY};
-  width: 12rem;
-  height: 3rem;
-  color: #fff;
-  border-radius: 10px;
-  cursor: pointer;
-  margin: 1rem 0.5rem;
-  font-size: 1.2rem;
-  font-weight: bolder;
-  display: flex;
-  justify-content: space-around;
-  padding: 0 1rem;
-  align-items: center;
-  transition: 300ms;
-  :hover {
+  @media (max-width: 580px) {
+    width: 40%;
   }
 `
 

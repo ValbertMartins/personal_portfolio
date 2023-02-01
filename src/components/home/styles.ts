@@ -1,13 +1,34 @@
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import { ThemeProps } from "../../Interface/IThemeProps"
+import circle_background from "../../assets/images/circle_background.png"
+import circle_background_one from "../../assets/images/circle_background_one.png"
+
+const AnimateCircles = keyframes`
+  50% {
+    background-size: 10%, 10%;
+  }
+  100% {
+    background-size: 15%, 15%;
+  }
+
+`
 export const HomeContainer = styled.section`
   width: 100vw;
   height: 100vh;
   background-color: ${({ theme }: { theme: ThemeProps }) => theme.colors.BACKGROUND_COLOR};
+  background-image: url(${circle_background}), url(${circle_background_one});
+  background-repeat: no-repeat;
+  background-position: bottom right, left bottom;
+  /* animation: ${AnimateCircles} linear infinite; */
+  background-size: 10%, 10%;
+  animation-duration: 5s;
 `
 export const ContainerContent = styled.div`
   max-width: 1000px;
   margin: 0rem auto;
+  @media (max-width: 1025px) {
+    max-width: 700px;
+  }
 `
 
 export const Navbar = styled.div`
@@ -28,28 +49,18 @@ export const PersonalInfoContainer = styled.div`
   justify-content: space-between;
   margin: 5rem 0;
   align-items: center;
+  @media (max-width: 1025px) {
+    justify-content: center;
+  }
 `
 
-export const MyInfoContainer = styled.div``
-
-export const Name = styled.h2`
-  font-size: 3rem;
-  color: ${({ theme }: { theme: ThemeProps }) => theme.colors.PRIMARY}; ;
+export const PeopleIllustration = styled.img`
+  @media (max-width: 1025px) {
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+  }
 `
-
-export const Description = styled.h1`
-  font-size: 2.3rem;
-  color: ${({ theme }: { theme: ThemeProps }) => theme.colors.PRIMARY};
-  margin: 0 0.5rem;
-`
-
-export const Abstract = styled.p`
-  max-width: 25rem;
-  font-size: 0.8rem;
-  margin: 1rem 0.5rem;
-`
-
-export const PeopleIllustration = styled.img``
 
 export const ButtonDownloadCurriculum = styled.button`
   border: none;
@@ -71,3 +82,5 @@ export const ButtonDownloadCurriculum = styled.button`
   :hover {
   }
 `
+
+export const ButtonScrollDown = styled.button``

@@ -12,7 +12,7 @@ import {
 import { ReactComponent as DownloadIcon } from "../../../assets/svg/downloadIcon.svg"
 import curriculumFile from "../../../assets/curriculoAtualizado.pdf"
 
-const ProfileInfo = ({ writeEffectLetters }: { writeEffectLetters: string }) => {
+const ProfileInfo = () => {
   return (
     <motion.div
       animate={{ opacity: 1, scale: 1 }}
@@ -29,6 +29,7 @@ const ProfileInfo = ({ writeEffectLetters }: { writeEffectLetters: string }) => 
             }}
           />
         </Description>
+
         <Abstract>
           is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
           the industry's standard dummy text ever since the 1500s, when an unknown printer took
@@ -37,6 +38,7 @@ const ProfileInfo = ({ writeEffectLetters }: { writeEffectLetters: string }) => 
           essentially unchanged. It was popularised in the 1960s with the release of Letraset
           sheets containing Lorem
         </Abstract>
+
         <ButtonDownloadCurriculum
           href={curriculumFile}
           download="Curriculum"

@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import { ThemeProps } from "../../Interface/IThemeProps"
 
 export const NavbarItem = styled.a`
@@ -8,6 +8,7 @@ export const NavbarItem = styled.a`
   cursor: pointer;
   transition: 500ms;
   text-decoration: none;
+
   :hover {
     color: ${({ theme }: { theme: ThemeProps }) => theme.colors.SECONDARY};
   }

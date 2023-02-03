@@ -4,7 +4,7 @@ import { ThemeProps } from "../../Interface/IThemeProps"
 export const ButtonMobileContainer = styled.button`
   height: 2.5rem;
   width: 2.5rem;
-  outline: none;
+  outline: 2px solid transparent;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -12,15 +12,31 @@ export const ButtonMobileContainer = styled.button`
   margin: 0 2rem;
   position: relative;
   user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 300ms;
+
+  ::after {
+    content: "";
+    height: 2px;
+    display: inline-block;
+    background-color: white;
+    width: 60%;
+    border-radius: 1px;
+    box-shadow: 0px 6px 0px 0px white, 0px -6px 0px 0px white;
+  }
+  :hover {
+    outline: 2px solid ${({ theme }: { theme: ThemeProps }) => theme.colors.SECONDARY};
+  }
 `
 
 export const ContainerOptions = styled.div`
   display: flex;
-  flex-direction: column;
+
   position: absolute;
-  gap: 1rem;
-  bottom: -8rem;
-  left: -1.5rem;
+  bottom: 0rem;
+  left: 0;
   font-size: 1rem;
   z-index: 5;
 `

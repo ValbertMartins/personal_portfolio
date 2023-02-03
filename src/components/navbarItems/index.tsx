@@ -1,5 +1,5 @@
 import { NavbarItem } from "./styles"
-
+import { motion } from "framer-motion"
 const NavbarItems = () => {
   return (
     <>

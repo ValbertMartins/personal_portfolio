@@ -1,4 +1,5 @@
 import { ThemeProvider } from "styled-components"
+import About from "./components/about"
 import Home from "./components/home"
 import Stacks from "./components/stacks"
 import { Container } from "./styles/app"
@@ -12,6 +13,7 @@ function App() {
         <GlobalStyles />
         <Home />
         <Stacks />
+        <About />
       </Container>
     </ThemeProvider>
   )

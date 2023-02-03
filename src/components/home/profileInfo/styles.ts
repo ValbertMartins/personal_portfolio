@@ -2,11 +2,15 @@ import styled from "styled-components"
 import { ThemeProps } from "../../../Interface/IThemeProps"
 
 export const MyInfoContainer = styled.div`
+  @media (max-width: 860px) {
+    margin-left: 1rem;
+  }
+
   @media (max-width: 580px) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 1rem;
+    margin: 1rem 0rem;
   }
 `
 
@@ -69,6 +73,7 @@ export const ButtonDownloadCurriculum = styled.a`
   transition: 300ms;
   text-decoration: none;
   :hover {
+    background-color: ${({ theme }: { theme: ThemeProps }) => theme.colors.SECONDARY};
   }
   @media (max-width: 710px) {
     width: 8rem;

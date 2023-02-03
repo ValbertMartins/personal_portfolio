@@ -7,6 +7,9 @@ export const GlobalStyles = createGlobalStyle`
     ::-webkit-scrollbar { 
       display: none;
     }
+    -webkit-tap-highlight-color:transparent;
+
+    scroll-behavior: smooth;
 
     font-family: "roboto";
   }

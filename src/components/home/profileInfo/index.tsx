@@ -1,4 +1,5 @@
 import React from "react"
+import Typewriter from "typewriter-effect"
 
 import { motion } from "framer-motion"
 import {
@@ -11,7 +12,7 @@ import {
 import { ReactComponent as DownloadIcon } from "../../../assets/svg/downloadIcon.svg"
 import curriculumFile from "../../../assets/curriculoAtualizado.pdf"
 
-const ProfileInfo = () => {
+const ProfileInfo = ({ writeEffectLetters }: { writeEffectLetters: string }) => {
   return (
     <motion.div
       animate={{ opacity: 1, scale: 1 }}
@@ -20,7 +21,14 @@ const ProfileInfo = () => {
     >
       <MyInfoContainer>
         <Name>Valbert Martins</Name>
-        <Description>Hello, I'm Front-end Developer</Description>
+
+        <Description>
+          <Typewriter
+            onInit={typewriter => {
+              typewriter.changeDelay(70).typeString("Hello, I'm Front-end developer.").start()
+            }}
+          />
+        </Description>
         <Abstract>
           is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
           the industry's standard dummy text ever since the 1500s, when an unknown printer took

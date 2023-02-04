@@ -1,12 +1,11 @@
 import { NavbarItem } from "./styles"
-import { motion } from "framer-motion"
 const NavbarItems = () => {
   return (
     <>
-      <NavbarItem>Contact</NavbarItem>
+      <NavbarItem href="#home">Home</NavbarItem>
       <NavbarItem href="#about">About</NavbarItem>
-      <NavbarItem href="#stacks">Stacks</NavbarItem>
-      <NavbarItem>Projects</NavbarItem>
+      <NavbarItem href="#projects">Projects</NavbarItem>
+      <NavbarItem href="#contact">Contact</NavbarItem>
     </>
   )
 }

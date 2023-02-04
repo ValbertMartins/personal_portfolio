@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react"
 import ButtonHamburguer from "../buttonHamburguer"
-import NavbarItems from "../navbarItems"
-import { NavbarContainer, NavbarContent } from "./styles"
-const Navbar = () => {
+import HeaderItems from "../headerItems"
+import { HeaderContainer, HeaderContent } from "./styles"
+const Header = () => {
   const [windowSize, setWindowSize] = useState(window.innerWidth)
 
   useEffect(() => {
@@ -13,18 +13,18 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", resizeEvent as any)
   }, [])
   return (
-    <NavbarContainer>
-      <NavbarContent>
+    <HeaderContainer>
+      <HeaderContent>
         {windowSize <= 580 ? (
           <ButtonHamburguer>
-            <NavbarItems />
+            <HeaderItems />
           </ButtonHamburguer>
         ) : (
-          <NavbarItems />
+          <HeaderItems />
         )}
-      </NavbarContent>
-    </NavbarContainer>
+      </HeaderContent>
+    </HeaderContainer>
   )
 }
 
-export default Navbar
+export default Header

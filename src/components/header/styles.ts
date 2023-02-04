@@ -1,19 +1,23 @@
 import styled from "styled-components"
 import { ThemeProps } from "../../Interface/IThemeProps"
 
-export const NavbarContainer = styled.div`
+export const HeaderContainer = styled.div`
   background-color: ${({ theme }: { theme: ThemeProps }) => theme.colors.BACKGROUND_COLOR};
   position: fixed;
   width: 100%;
   top: 0rem;
   z-index: 10;
+  border-bottom: 1px solid ${({ theme }: { theme: ThemeProps }) => theme.colors.PRIMARY};
+  /* box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.2); */
 
   @media (max-width: 580px) {
     background-color: transparent;
+    border-bottom: none;
+    box-shadow: none;
   }
 `
-export const NavbarContent = styled.div`
-  max-width: 1000px;
+export const HeaderContent = styled.div`
+  max-width: 80%;
   margin: 0 auto;
   display: flex;
   justify-content: end;

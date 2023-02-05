@@ -11,15 +11,10 @@ export const ProjectContainer = styled.article`
   gap: 2rem;
   margin: 2rem 0;
 `
-export const Preview = styled.div`
-  width: 500px;
-  height: 300px;
-  border-radius: 5px;
-  background-color: #d9d9d9;
-  max-width: 50%;
-`
 
 export const Details = styled.div`
+  display: flex;
+  flex-direction: column;
   max-width: 50%;
 `
 export const Title = styled.h1`
@@ -28,3 +23,33 @@ export const Title = styled.h1`
   color: ${({ theme }: { theme: ThemeProps }) => theme.colors.PRIMARY};
 `
 export const Description = styled.p``
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+`
+
+interface ButtonProps {
+  disabled?: boolean
+  theme: ThemeProps
+}
+export const Button = styled.a<ButtonProps>`
+  background-color: ${(props: { theme: ThemeProps; disabled?: boolean }) =>
+    props.disabled ? props.theme.colors.SECONDARY : props.theme.colors.PRIMARY};
+  outline: 2px solid transparent;
+  border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 5px;
+  margin: 1rem 0.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 300ms;
+  pointer-events: ${props => (props.disabled ? "none" : "auto")};
+
+  :hover {
+    background-color: ${({ theme }: { theme: ThemeProps }) => theme.colors.SECONDARY};
+  }
+`

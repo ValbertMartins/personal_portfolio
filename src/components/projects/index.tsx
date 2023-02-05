@@ -1,44 +1,17 @@
 import { motion } from "framer-motion"
-import { Container, Description, Details, Preview, ProjectContainer, Title } from "./styles"
-
-interface ProjectProps {
-  preview: null
-  title: string
-  description: string
-}
-
-const projects: ProjectProps[] = [
-  {
-    preview: null,
-    title: "ProjectOne",
-    description:
-      "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem",
-  },
-  {
-    preview: null,
-    title: "Project two",
-    description:
-      "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem",
-  },
-  {
-    preview: null,
-    title: "Project three",
-    description:
-      "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem",
-  },
-  {
-    preview: null,
-    title: "Project four",
-    description:
-      "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem",
-  },
-  {
-    preview: null,
-    title: "Project five",
-    description:
-      "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem",
-  },
-]
+import {
+  Container,
+  Description,
+  Details,
+  ProjectContainer,
+  Title,
+  Button,
+  ButtonContainer,
+} from "./styles"
+import { ReactComponent as GithubIcon } from "../../assets/svg/githubIcon.svg"
+import { ReactComponent as ExtenalLinkIcon } from "../../assets/svg/externalLinkIcon.svg"
+import Preview from "../preview"
+import { projects } from "../../utils/projectsInfoProvider"
 
 const Projects = () => {
   return (
@@ -46,6 +19,7 @@ const Projects = () => {
       {projects.map(project => {
         return (
           <motion.div
+            key={project.title}
             initial={{ opacity: 0, x: -300 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
@@ -54,11 +28,20 @@ const Projects = () => {
               once: true,
             }}
           >
-            <ProjectContainer key={project.title}>
-              <Preview></Preview>
+            <ProjectContainer>
+              <Preview images={project.images} />
+
               <Details>
                 <Title>{project.title}</Title>
                 <Description>{project.description}</Description>
+                <ButtonContainer>
+                  <Button disabled={project.links.deployLink ? false : true}>
+                    <ExtenalLinkIcon />
+                  </Button>
+                  <Button href={project.links.githubRepo}>
+                    <GithubIcon />
+                  </Button>
+                </ButtonContainer>
               </Details>
             </ProjectContainer>
           </motion.div>

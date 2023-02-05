@@ -63,3 +63,10 @@ export const PeopleIllustration = styled.img`
     width: 40%;
   }
 `
+
+interface PB {
+  w: string
+  theme: {
+    color: string
+  }
+}

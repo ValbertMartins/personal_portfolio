@@ -5,24 +5,50 @@ export const Container = styled.section`
   margin: 3rem auto;
   padding-top: 5rem;
   max-width: 1000px;
+  @media (max-width: 1025px) {
+    max-width: 800px;
+    font-size: 1rem;
+  }
 `
 export const ProjectContainer = styled.article`
   display: flex;
   gap: 2rem;
-  margin: 2rem 0;
+  margin: 2rem auto;
+  @media (max-width: 710px) {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 0rem;
+    margin: 3rem auto;
+  }
 `
 
 export const Details = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 50%;
+  @media (max-width: 710px) {
+    max-width: 75%;
+    width: 75%;
+    flex-shrink: 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 `
 export const Title = styled.h1`
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
   color: ${({ theme }: { theme: ThemeProps }) => theme.colors.PRIMARY};
+  @media (max-width: 710px) {
+    margin-bottom: 0;
+    font-size: 1.3rem;
+  }
 `
-export const Description = styled.p``
+export const Description = styled.p`
+  @media (max-width: 710px) {
+    display: none;
+  }
+`
 
 export const ButtonContainer = styled.div`
   display: flex;
@@ -51,5 +77,9 @@ export const Button = styled.a<ButtonProps>`
 
   :hover {
     background-color: ${({ theme }: { theme: ThemeProps }) => theme.colors.SECONDARY};
+  }
+  @media (max-width: 710px) {
+    width: 2rem;
+    height: 2rem;
   }
 `

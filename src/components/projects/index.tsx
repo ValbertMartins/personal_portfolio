@@ -35,7 +35,10 @@ const Projects = () => {
                 <Title>{project.title}</Title>
                 <Description>{project.description}</Description>
                 <ButtonContainer>
-                  <Button disabled={project.links.deployLink ? false : true}>
+                  <Button
+                    href={project.links.deployLink}
+                    disabled={project.links.deployLink ? false : true}
+                  >
                     <ExtenalLinkIcon />
                   </Button>
                   <Button href={project.links.githubRepo}>

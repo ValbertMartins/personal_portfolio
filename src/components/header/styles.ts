@@ -17,12 +17,12 @@ export const HeaderContainer = styled.div`
   }
 `
 export const HeaderContent = styled.div`
-  max-width: 80%;
+  max-width: 90%;
   margin: 0 auto;
   display: flex;
   justify-content: end;
   padding: 2rem 1rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   @media (max-width: 1025px) {
     max-width: 700px;
     font-size: 1rem;

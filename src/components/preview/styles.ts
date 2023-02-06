@@ -5,19 +5,19 @@ interface Props {
 }
 
 export const Container = styled.div`
-  max-width: 500px;
-  max-height: 300px;
   border-radius: 5px;
-  background-color: #d9d9d9;
+  background-color: #fff;
   max-width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 710px) {
+    max-width: 75%;
+  }
 `
 
 export const Indicator = styled.li`
   background: ${(props: Props) => (props.active ? "#6215DD" : "#fff")};
-
   width: 8px;
   height: 8px;
   display: inline-block;

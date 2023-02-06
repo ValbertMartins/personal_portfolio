@@ -12,7 +12,7 @@ export const projects: ProjectProps[] = [
   {
     title: "Ecommerce",
     description:
-      "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem",
+      "E-commerce built-in with ReactJS, typescript, styled-components, integration with stripe to process payments, integration with strapi CMS to consume admin dashboard, and authentication with jWT.",
     images: [
       "src/assets/images/projectsImages/project1/image1.png",
       "src/assets/images/projectsImages/project1/image2.png",
@@ -29,7 +29,7 @@ export const projects: ProjectProps[] = [
   {
     title: "React Dogs",
     description:
-      "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem",
+      "Social Media built-in using reactJS, Css modules, JWT to authentication, axios to consume API, and victory lib to provide graphs.",
     images: [
       "src/assets/images/projectsImages/project2/image1.png",
       "src/assets/images/projectsImages/project2/image2.png",

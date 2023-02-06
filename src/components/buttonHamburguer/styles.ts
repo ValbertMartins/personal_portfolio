@@ -9,8 +9,8 @@ export const ButtonMobileContainer = styled.button`
   border-radius: 5px;
   cursor: pointer;
   background-color: ${({ theme }: { theme: ThemeProps }) => theme.colors.PRIMARY};
-  margin: 0 2rem;
-  position: relative;
+  position: fixed;
+  top: 1rem;
   user-select: none;
   display: flex;
   justify-content: center;
@@ -33,7 +33,6 @@ export const ButtonMobileContainer = styled.button`
 
 export const ContainerOptions = styled.div`
   display: flex;
-
   position: absolute;
   bottom: 0rem;
   left: 0;

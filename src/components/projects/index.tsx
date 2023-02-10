@@ -20,9 +20,9 @@ const Projects = () => {
         return (
           <motion.div
             key={project.title}
-            initial={{ opacity: 0, x: -300 }}
+            initial={{ opacity: 0, x: -200 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.2, type: "spring" }}
             viewport={{
               margin: "0px 0px 0px 0px",
               once: true,

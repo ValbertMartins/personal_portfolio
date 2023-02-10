@@ -30,6 +30,7 @@ const Preview = ({ images }: Props) => {
         showStatus={false}
         dynamicHeight={true}
         infiniteLoop
+        interval={4000}
         renderIndicator={handleIndicator}
       >
         {images?.map(image => {

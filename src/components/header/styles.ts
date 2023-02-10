@@ -7,8 +7,7 @@ export const HeaderContainer = styled.div`
   width: 100%;
   top: 0rem;
   z-index: 10;
-  border-bottom: 1px solid ${({ theme }: { theme: ThemeProps }) => theme.colors.PRIMARY};
-  /* box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.2); */
+  box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.2);
 
   @media (max-width: 580px) {
     background-color: transparent;

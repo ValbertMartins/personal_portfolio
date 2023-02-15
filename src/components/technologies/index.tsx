@@ -1,44 +1,44 @@
 import { AnimatePresence, delay, motion } from "framer-motion"
-import { useState } from "react"
 import { technologiesList } from "../../utils/technologiesInfoProvider"
+import { useState } from "react"
 import {
   ContainerContent,
   Flex,
-  Grid,
   Icon,
   ItemContainer,
   Modal,
   ModalButton,
   ModalContent,
   Name,
-  Title,
 } from "./styles"
 
-const Technologies = () => {
-  const [itemId, setItemId] = useState<string | null>(null)
+type Props = {
+  setItemId: React.Dispatch<React.SetStateAction<string | null>>
+  itemId: string | null
+}
+
+const Technologies = ({ itemId, setItemId }: Props) => {
   const [technologie] = technologiesList.filter(item => item.id === itemId)
 
   return (
     <ContainerContent>
-      <Title>Technologies</Title>
-      <Grid>
-        {technologiesList.map(item => {
-          return (
-            <ItemContainer
-              layoutId={item.id}
-              key={item.id}
-              onClick={() => setItemId(item.id)}
-              initial={{ opacity: 0, y: -100 }}
-              animate={{ opacity: itemId ? 0.1 : 1, y: 0 }}
-            >
-              <Icon
-                src={item.icon}
-                maxWidth={4}
-              />
-            </ItemContainer>
-          )
-        })}
-      </Grid>
+      {technologiesList.map(item => {
+        return (
+          <ItemContainer
+            layoutId={item.id}
+            key={item.id}
+            onClick={() => setItemId(item.id)}
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: itemId ? 0 : 1, y: 0 }}
+          >
+            <Icon
+              src={item.icon}
+              maxWidth={4}
+            />
+          </ItemContainer>
+        )
+      })}
+
       <AnimatePresence>
         {itemId && (
           <Modal>
@@ -52,7 +52,10 @@ const Technologies = () => {
               </Flex>
 
               <p>{technologie.description}</p>
-              <ModalButton onClick={() => setItemId(null)}>x</ModalButton>
+              <ModalButton
+                color={technologie.borderColor}
+                onClick={() => setItemId(null)}
+              ></ModalButton>
             </ModalContent>
           </Modal>
         )}

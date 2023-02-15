@@ -1,20 +1,24 @@
 import { motion } from "framer-motion"
 import styled from "styled-components"
 import { ThemeProps } from "../../Interface/IThemeProps"
+import closeButtonIcon from "../../assets/images/icon_ButtonClose.png"
 
-export const ContainerContent = styled.div``
+export const ContainerContent = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 4rem 1rem;
+  flex-wrap: wrap;
+`
 
 export const Title = styled.h1`
   text-align: center;
+  opacity: 0;
   margin: 3rem 0;
   color: ${({ theme }: { theme: ThemeProps }) => theme.colors.PRIMARY};
   font-size: 2rem;
   font-weight: 900;
-`
-export const Grid = styled.div`
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
 `
 
 export const ItemContainer = styled(motion.div)`
@@ -25,6 +29,9 @@ export const ItemContainer = styled(motion.div)`
 
 export const Icon = styled.img`
   max-width: ${(props: { maxWidth: number }) => props.maxWidth}rem;
+  @media (max-width: 710px) {
+    max-width: ${(props: { maxWidth: number }) => props.maxWidth / 1.5}rem;
+  }
 `
 
 export const Modal = styled(motion.div)`
@@ -32,8 +39,9 @@ export const Modal = styled(motion.div)`
   width: 100%;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   top: 0;
   left: 0;
 `
@@ -47,11 +55,14 @@ export const ModalContent = styled(motion.div)`
   max-width: 900px;
   padding: 2%;
   position: relative;
-  z-index: 1000;
 
   h2 {
     margin: 1rem 0;
     font-size: 5rem;
+  }
+  p {
+    margin: 1rem 0;
+    text-align: center;
   }
 `
 export const Flex = styled.div`
@@ -59,26 +70,37 @@ export const Flex = styled.div`
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  @media (max-width: 500px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `
 
 export const Name = styled.h1`
-  font-size: 7rem;
-
+  font-size: 5rem;
   color: ${(props: { color: string }) => props.color};
+  @media (max-width: 710px) {
+    font-size: 4rem;
+  }
 `
 
 export const ModalButton = styled(motion.button)`
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border: none;
   outline: none;
   position: absolute;
-  right: 0.5rem;
-  top: 0.5rem;
+  bottom: -5rem;
   border-radius: 50%;
   border: 1px solid #d9d9d9;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  color: white;
+  font-size: 1.5rem;
+  background: ${({ color }: { color: string }) => color} url(${closeButtonIcon}) no-repeat
+    center center;
+  background-size: 12px;
 `

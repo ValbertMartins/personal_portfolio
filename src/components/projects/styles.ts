@@ -6,8 +6,11 @@ export const Container = styled.section`
   padding-top: 5rem;
   max-width: 1000px;
   @media (max-width: 1025px) {
-    max-width: 800px;
+    max-width: 700px;
     font-size: 1rem;
+  }
+  @media (max-width: 580px) {
+    margin: 0 auto;
   }
 `
 export const ProjectContainer = styled.article`
@@ -43,11 +46,16 @@ export const Title = styled.h1`
   @media (max-width: 710px) {
     margin-bottom: 0;
     font-size: 1.3rem;
+    margin-left: 2rem;
   }
 `
 
 export const Name = styled(Title)`
   font-size: 1.5rem;
+  @media (max-width: 710px) {
+    margin-left: 0;
+    font-size: 1.2rem;
+  }
 `
 export const Description = styled.p`
   @media (max-width: 710px) {

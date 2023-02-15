@@ -10,7 +10,7 @@ import ProfileInfo from "./profileInfo"
 
 const Home = () => {
   return (
-    <HomeContainer id="home">
+    <HomeContainer>
       <ContainerContent>
         <PersonalInfoContainer>
           <ProfileInfo />

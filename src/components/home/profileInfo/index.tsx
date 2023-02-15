@@ -1,6 +1,4 @@
-import React from "react"
 import Typewriter from "typewriter-effect"
-
 import { motion } from "framer-motion"
 import {
   Abstract,

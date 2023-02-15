@@ -8,7 +8,7 @@ interface ProjectProps {
   }
 }
 
-export const projects: ProjectProps[] = [
+export const projectList: ProjectProps[] = [
   {
     title: "Ecommerce",
     description:

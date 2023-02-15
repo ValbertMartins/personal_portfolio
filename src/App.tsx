@@ -1,5 +1,5 @@
 import { ThemeProvider } from "styled-components"
-import About from "./components/about"
+import Technologies from "./components/technologies"
 import Home from "./components/home"
 import Header from "./components/header"
 import Projects from "./components/projects"
@@ -7,6 +7,8 @@ import { Container } from "./styles/app"
 import { GlobalStyles } from "./styles/global"
 import { Light } from "./themes/light"
 import Contact from "./components/contact"
+import { Routes, Route } from "react-router-dom"
+import AboutMe from "./components/about"
 
 function App() {
   return (
@@ -14,10 +16,24 @@ function App() {
       <Container>
         <GlobalStyles />
         <Header />
-        <Home />
-        <About />
-        <Projects />
-        <Contact />
+        <Routes>
+          <Route
+            path="/"
+            element={<Home />}
+          />
+          <Route
+            path="/about"
+            element={<AboutMe />}
+          />
+          <Route
+            path="/projects"
+            element={<Projects />}
+          />
+          <Route
+            path="/contact"
+            element={<Contact />}
+          />
+        </Routes>
       </Container>
     </ThemeProvider>
   )

@@ -2,10 +2,10 @@ import { NavbarItem } from "./styles"
 const NavbarItems = () => {
   return (
     <>
-      <NavbarItem href="#home">Home</NavbarItem>
-      <NavbarItem href="#about">About</NavbarItem>
-      <NavbarItem href="#projects">Projects</NavbarItem>
-      <NavbarItem href="#contact">Contact</NavbarItem>
+      <NavbarItem to="">Home</NavbarItem>
+      <NavbarItem to="about">About</NavbarItem>
+      <NavbarItem to="projects">Projects</NavbarItem>
+      <NavbarItem to="contact">Contact</NavbarItem>
     </>
   )
 }

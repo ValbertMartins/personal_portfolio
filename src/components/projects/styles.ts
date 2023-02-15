@@ -13,7 +13,7 @@ export const Container = styled.section`
 export const ProjectContainer = styled.article`
   display: flex;
   gap: 2rem;
-  margin: 2rem auto;
+  margin: 3rem auto;
   @media (max-width: 710px) {
     flex-direction: column-reverse;
     align-items: center;
@@ -36,13 +36,18 @@ export const Details = styled.div`
   }
 `
 export const Title = styled.h1`
-  font-size: 1.4rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
+  font-weight: 900;
   color: ${({ theme }: { theme: ThemeProps }) => theme.colors.PRIMARY};
   @media (max-width: 710px) {
     margin-bottom: 0;
     font-size: 1.3rem;
   }
+`
+
+export const Name = styled(Title)`
+  font-size: 1.5rem;
 `
 export const Description = styled.p`
   @media (max-width: 710px) {

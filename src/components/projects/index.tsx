@@ -7,16 +7,18 @@ import {
   Title,
   Button,
   ButtonContainer,
+  Name,
 } from "./styles"
 import { ReactComponent as GithubIcon } from "../../assets/svg/githubIcon.svg"
 import { ReactComponent as ExtenalLinkIcon } from "../../assets/svg/externalLinkIcon.svg"
 import Preview from "../preview"
-import { projects } from "../../utils/projectsInfoProvider"
+import { projectList } from "../../utils/projectsInfoProvider"
 
 const Projects = () => {
   return (
-    <Container id="projects">
-      {projects.map(project => {
+    <Container>
+      <Title>Projects</Title>
+      {projectList.map(project => {
         return (
           <motion.div
             key={project.title}
@@ -32,7 +34,7 @@ const Projects = () => {
               <Preview images={project.images} />
 
               <Details>
-                <Title>{project.title}</Title>
+                <Name>{project.title}</Name>
                 <Description>{project.description}</Description>
                 <ButtonContainer>
                   <Button

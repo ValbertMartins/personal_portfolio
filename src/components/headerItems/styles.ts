@@ -1,7 +1,7 @@
 import styled, { keyframes } from "styled-components"
 import { ThemeProps } from "../../Interface/IThemeProps"
-
-export const NavbarItem = styled.a`
+import { Link } from "react-router-dom"
+export const NavbarItem = styled(Link)`
   color: ${({ theme }: { theme: ThemeProps }) => theme.colors.PRIMARY};
   font-weight: 1000;
   margin: 0 1rem;

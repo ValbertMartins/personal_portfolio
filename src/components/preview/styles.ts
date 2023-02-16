@@ -1,9 +1,5 @@
 import styled from "styled-components"
 
-interface Props {
-  active?: boolean
-}
-
 export const Container = styled.div`
   border-radius: 5px;
   background-color: #fff;
@@ -17,8 +13,12 @@ export const Container = styled.div`
   }
 `
 
+interface Props {
+  active?: boolean
+}
+
 export const Indicator = styled.li`
-  background: ${(props: Props) => (props.active ? "#6215DD" : "#fff")};
+  background: ${(props: Props) => (props.active ? "var(--primary-color)" : "var(--bg-color)")};
   width: 8px;
   height: 8px;
   display: inline-block;

@@ -6,13 +6,14 @@ import Projects from "./components/projects"
 import { Container } from "./styles/app"
 import { GlobalStyles } from "./styles/global"
 import { Light } from "./themes/light"
+import { Dark } from "./themes/dark"
 import Contact from "./components/contact"
 import { Routes, Route } from "react-router-dom"
 import AboutMe from "./components/about"
 
 function App() {
   return (
-    <ThemeProvider theme={Light}>
+    <ThemeProvider theme={Dark}>
       <Container>
         <GlobalStyles />
         <Header />

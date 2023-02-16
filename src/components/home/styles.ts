@@ -6,7 +6,7 @@ import circle_background_mobile from "../../assets/images/circle_background_mobi
 
 export const HomeContainer = styled.section`
   height: 100vh;
-  background-color: ${({ theme }: { theme: ThemeProps }) => theme.colors.BACKGROUND_COLOR};
+  background-color: var(--bg-color);
   background-image: url(${circle_background}), url(${circle_background_one});
   background-repeat: no-repeat;
   background-position: bottom right, left bottom;
@@ -63,10 +63,3 @@ export const PeopleIllustration = styled.img`
     width: 40%;
   }
 `
-
-interface PB {
-  w: string
-  theme: {
-    color: string
-  }
-}

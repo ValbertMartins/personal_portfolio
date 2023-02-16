@@ -1,8 +1,8 @@
-import styled, { keyframes } from "styled-components"
-import { ThemeProps } from "../../Interface/IThemeProps"
+import styled from "styled-components"
 import { Link } from "react-router-dom"
+
 export const NavbarItem = styled(Link)`
-  color: ${({ theme }: { theme: ThemeProps }) => theme.colors.PRIMARY};
+  color: var(--primary-color);
   font-weight: 1000;
   margin: 0 1rem;
   cursor: pointer;
@@ -10,6 +10,6 @@ export const NavbarItem = styled(Link)`
   text-decoration: none;
 
   :hover {
-    color: ${({ theme }: { theme: ThemeProps }) => theme.colors.SECONDARY};
+    color: var(--secondary-color);
   }
 `

@@ -8,7 +8,7 @@ export const ButtonMobileContainer = styled.button`
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: ${({ theme }: { theme: ThemeProps }) => theme.colors.PRIMARY};
+  background-color: var(--primary-color);
   position: fixed;
   top: 1rem;
   user-select: none;
@@ -27,7 +27,7 @@ export const ButtonMobileContainer = styled.button`
     box-shadow: 0px 6px 0px 0px white, 0px -6px 0px 0px white;
   }
   :hover {
-    outline: 2px solid ${({ theme }: { theme: ThemeProps }) => theme.colors.SECONDARY};
+    outline: 2px solid var(--secondary-color);
   }
 `
 

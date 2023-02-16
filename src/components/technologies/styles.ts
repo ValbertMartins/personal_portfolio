@@ -16,7 +16,7 @@ export const Title = styled.h1`
   text-align: center;
   opacity: 0;
   margin: 3rem 0;
-  color: ${({ theme }: { theme: ThemeProps }) => theme.colors.PRIMARY};
+  color: var(--primary-color);
   font-size: 2rem;
   font-weight: 900;
 `
@@ -47,7 +47,7 @@ export const Modal = styled(motion.div)`
 `
 
 export const ModalContent = styled(motion.div)`
-  background-color: white;
+  background-color: var(--bg-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -63,6 +63,7 @@ export const ModalContent = styled(motion.div)`
   p {
     margin: 1rem 0;
     text-align: center;
+    color: var(--text-color);
   }
 `
 export const Flex = styled.div`
@@ -93,7 +94,6 @@ export const ModalButton = styled(motion.button)`
   position: absolute;
   bottom: -5rem;
   border-radius: 50%;
-  border: 1px solid #d9d9d9;
   display: flex;
   align-items: center;
   justify-content: center;

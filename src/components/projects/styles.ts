@@ -1,10 +1,10 @@
 import styled from "styled-components"
-import { ThemeProps } from "../../Interface/IThemeProps"
 
 export const Container = styled.section`
   margin: 3rem auto;
   padding-top: 5rem;
   max-width: 1000px;
+  background-color: var(--bg-color);
   @media (max-width: 1025px) {
     max-width: 700px;
     font-size: 1rem;
@@ -42,7 +42,7 @@ export const Title = styled.h1`
   font-size: 2rem;
   margin-bottom: 1rem;
   font-weight: 900;
-  color: ${({ theme }: { theme: ThemeProps }) => theme.colors.PRIMARY};
+  color: var(--primary-color);
   @media (max-width: 710px) {
     margin-bottom: 0;
     font-size: 1.3rem;
@@ -58,6 +58,7 @@ export const Name = styled(Title)`
   }
 `
 export const Description = styled.p`
+  color: var(--text-color);
   @media (max-width: 710px) {
     display: none;
   }
@@ -70,11 +71,10 @@ export const ButtonContainer = styled.div`
 
 interface ButtonProps {
   disabled?: boolean
-  theme: ThemeProps
 }
 export const Button = styled.a<ButtonProps>`
-  background-color: ${(props: { theme: ThemeProps; disabled?: boolean }) =>
-    props.disabled ? props.theme.colors.SECONDARY : props.theme.colors.PRIMARY};
+  background-color: ${props =>
+    props.disabled ? `var(--secondary-color)` : `var(--primary-color)`};
   outline: 2px solid transparent;
   border: none;
   width: 2.5rem;
@@ -89,7 +89,7 @@ export const Button = styled.a<ButtonProps>`
   pointer-events: ${props => (props.disabled ? "none" : "auto")};
 
   :hover {
-    background-color: ${({ theme }: { theme: ThemeProps }) => theme.colors.SECONDARY};
+    background-color: var(--secondary-color);
   }
   @media (max-width: 710px) {
     width: 2rem;

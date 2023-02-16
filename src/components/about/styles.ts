@@ -1,10 +1,13 @@
 import { motion } from "framer-motion"
 import styled from "styled-components"
-import { ThemeProps } from "../../Interface/IThemeProps"
 
 export const Container = styled.section`
   max-width: 1000px;
-  margin: 10rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 `
 export const AboutContent = styled(motion.div)`
   @media (max-width: 1025px) {
@@ -21,6 +24,7 @@ export const AboutContent = styled(motion.div)`
       font-size: 0.8rem;
       max-width: 80%;
       margin: 0 auto;
+      color: var(--text-color);
     }
   }
 `
@@ -32,7 +36,7 @@ export const LogoContainer = styled(motion.div)`
 export const Title = styled(motion.h2)`
   text-align: center;
   font-weight: 900;
-  color: ${(props: { theme: ThemeProps }) => props.theme.colors.PRIMARY};
+  color: var(--primary-color);
   margin: 3rem 0rem;
   font-size: 2rem;
 `

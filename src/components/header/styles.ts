@@ -1,8 +1,7 @@
 import styled from "styled-components"
-import { ThemeProps } from "../../Interface/IThemeProps"
 
 export const HeaderContainer = styled.div`
-  background-color: ${({ theme }: { theme: ThemeProps }) => theme.colors.BACKGROUND_COLOR};
+  background-color: var(--bg-color);
   position: fixed;
   width: 100%;
   top: 0rem;

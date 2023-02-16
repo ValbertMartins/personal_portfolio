@@ -3,5 +3,6 @@ export interface ThemeProps {
     PRIMARY: string
     SECONDARY: string
     BACKGROUND_COLOR: string
+    TEXT_COLOR: string
   }
 }

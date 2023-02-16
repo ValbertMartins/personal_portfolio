@@ -3,20 +3,20 @@ import styled from "styled-components"
 
 export const Container = styled.section`
   max-width: 1000px;
+  margin: 0rem auto;
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  flex-direction: column;
 `
 export const AboutContent = styled(motion.div)`
+  margin-top: 7rem;
   @media (max-width: 1025px) {
     max-width: 600px;
-    margin: 0 auto;
     img {
       max-width: 10rem;
     }
-
     h2 {
       font-size: 1.5rem;
     }
@@ -44,4 +44,5 @@ export const Title = styled(motion.h2)`
 export const Description = styled(motion.p)`
   text-align: center;
   opacity: 0.8;
+  color: var(--text-color);
 `

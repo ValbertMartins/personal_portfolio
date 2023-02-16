@@ -1,8 +1,15 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, SetStateAction, Dispatch } from "react"
 import ButtonHamburguer from "../buttonHamburguer"
+import ButtonTheme from "../buttonTheme"
 import HeaderItems from "../headerItems"
 import { HeaderContainer, HeaderContent } from "./styles"
-const Header = () => {
+
+interface Props {
+  setChangeTheme: Dispatch<SetStateAction<boolean>>
+  changeTheme: boolean
+}
+
+const Header = ({ setChangeTheme, changeTheme }: Props) => {
   const [windowSize, setWindowSize] = useState(window.innerWidth)
 
   useEffect(() => {
@@ -15,13 +22,19 @@ const Header = () => {
   return (
     <HeaderContainer>
       <HeaderContent>
-        {windowSize <= 580 ? (
-          <ButtonHamburguer>
+        <ButtonTheme
+          setChangeTheme={setChangeTheme}
+          changeTheme={changeTheme}
+        />
+        <div>
+          {windowSize <= 580 ? (
+            <ButtonHamburguer>
+              <HeaderItems />
+            </ButtonHamburguer>
+          ) : (
             <HeaderItems />
-          </ButtonHamburguer>
-        ) : (
-          <HeaderItems />
-        )}
+          )}
+        </div>
       </HeaderContent>
     </HeaderContainer>
   )

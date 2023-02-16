@@ -1,6 +1,5 @@
 import { motion } from "framer-motion"
 import styled from "styled-components"
-import { ThemeProps } from "../../Interface/IThemeProps"
 import closeButtonIcon from "../../assets/images/icon_ButtonClose.png"
 
 export const ContainerContent = styled.div`
@@ -8,7 +7,7 @@ export const ContainerContent = styled.div`
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  margin: 4rem 1rem;
+  margin: 2rem 1rem;
   flex-wrap: wrap;
 `
 

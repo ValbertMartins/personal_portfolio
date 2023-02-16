@@ -15,17 +15,17 @@ export const HeaderContainer = styled.div`
   }
 `
 export const HeaderContent = styled.div`
-  max-width: 90%;
+  max-width: 80%;
   margin: 0 auto;
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   padding: 2rem 1rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   @media (max-width: 1025px) {
-    max-width: 700px;
+    /* max-width: 900px; */
     font-size: 1rem;
   }
   @media (max-width: 710px) {
-    max-width: 580px;
+    /* max-width: 650px; */
   }
 `

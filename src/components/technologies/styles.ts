@@ -24,9 +24,10 @@ export const ItemContainer = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: transparent;
 `
 
-export const Icon = styled.img`
+export const Icon = styled(motion.img)`
   max-width: ${(props: { maxWidth: number }) => props.maxWidth}rem;
   @media (max-width: 710px) {
     max-width: ${(props: { maxWidth: number }) => props.maxWidth / 1.5}rem;
@@ -46,7 +47,7 @@ export const Modal = styled(motion.div)`
 `
 
 export const ModalContent = styled(motion.div)`
-  background-color: var(--bg-color);
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   justify-content: center;

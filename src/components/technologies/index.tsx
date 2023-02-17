@@ -1,6 +1,5 @@
 import { AnimatePresence, delay, motion } from "framer-motion"
 import { technologiesList } from "../../utils/technologiesInfoProvider"
-import { useState } from "react"
 import {
   ContainerContent,
   Flex,
@@ -32,6 +31,7 @@ const Technologies = ({ itemId, setItemId }: Props) => {
             animate={{ opacity: itemId ? 0 : 1, y: 0 }}
           >
             <Icon
+              layoutId={item.icon}
               src={item.icon}
               maxWidth={4}
             />
@@ -45,6 +45,7 @@ const Technologies = ({ itemId, setItemId }: Props) => {
             <ModalContent layoutId={itemId}>
               <Flex>
                 <Icon
+                  layoutId={technologie.icon}
                   src={technologie.icon}
                   maxWidth={12}
                 />

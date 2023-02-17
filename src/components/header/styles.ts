@@ -20,7 +20,7 @@ export const HeaderContent = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 2rem 1rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   @media (max-width: 1025px) {
     /* max-width: 900px; */
     font-size: 1rem;

@@ -9,6 +9,7 @@ export const GlobalStyles = createGlobalStyle`
     -webkit-tap-highlight-color:transparent;
     scroll-behavior: smooth;
     font-family: "roboto";
+    --default-font: "roboto";
     --primary-color: ${(props: Props) => props.theme.colors.PRIMARY};
     --secondary-color: ${(props: Props) => props.theme.colors.SECONDARY};
     --bg-color: ${(props: Props) => props.theme.colors.BACKGROUND_COLOR};
@@ -18,7 +19,7 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    
+    text-decoration: none;
     
   }
 

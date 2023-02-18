@@ -22,10 +22,8 @@ export const HeaderContent = styled.div`
   padding: 2rem 1rem;
   font-size: 1.1rem;
   @media (max-width: 1025px) {
-    /* max-width: 900px; */
     font-size: 1rem;
   }
   @media (max-width: 710px) {
-    /* max-width: 650px; */
   }
 `

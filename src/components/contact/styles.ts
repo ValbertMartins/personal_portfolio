@@ -33,6 +33,12 @@ export const ContainerContact = styled.div`
     width: 100%;
     max-width: 420px;
   }
+
+  @media (max-width: 430px) {
+    * {
+      max-width: 290px;
+    }
+  }
 `
 export const Title = styled.h1`
   font-size: 2rem;

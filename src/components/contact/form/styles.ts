@@ -2,7 +2,6 @@ import { motion } from "framer-motion"
 import styled from "styled-components"
 
 export const ContactForm = styled(motion.form)`
-  max-width: 420px;
   input,
   textarea {
     resize: none;

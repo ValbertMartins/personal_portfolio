@@ -1,39 +1,37 @@
-import { FormEvent, useState } from "react"
+import { AnimatePresence } from "framer-motion"
+import { Dispatch, FormEvent, SetStateAction, useState } from "react"
 import { submitForm } from "../../../api/form"
 import { ReactComponent as SendIcon } from "../../../assets/svg/send_icon.svg"
-import SocialButtons from "../../socialButtons"
 
-import {
-  ButtonSubmit,
-  ContactForm,
-  EmailWrapper,
-  MessageInput,
-  SubmitedMessage,
-  Title,
-} from "./styles"
+import { ButtonSubmit, ContactForm, EmailWrapper, MessageInput, Spinner } from "./styles"
 
-const FormContact = () => {
+interface FormProps {
+  setSubmited: Dispatch<SetStateAction<boolean>>
+  submited: boolean
+}
+const Form = ({ setSubmited, submited }: FormProps) => {
   const [email, setEmail] = useState("")
   const [subject, setSubject] = useState("")
   const [message, setMessage] = useState("")
-  const [submited, setSubmited] = useState(false)
+  const [submitLoading, setSubmitLoading] = useState(false)
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
+    setSubmitLoading(true)
     await submitForm(email, subject, message)
     setSubmited(true)
+    setSubmitLoading(false)
   }
 
   return (
-    <ContactForm
-      onSubmit={handleSubmit}
-      initial={{ opacity: 0, scale: 0.3 }}
-      animate={{ opacity: 1, scale: 1 }}
-    >
-      <Title>Contact Me</Title>
-
+    <AnimatePresence mode="popLayout">
       {!submited && (
-        <>
+        <ContactForm
+          onSubmit={handleSubmit}
+          initial={{ opacity: 0, scale: 0.3 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ scale: 0.2, y: -100, opacity: 0 }}
+        >
           <EmailWrapper>
             <input
               type="email"
@@ -44,9 +42,7 @@ const FormContact = () => {
               onChange={({ target }) => setEmail(target.value)}
             />
 
-            <ButtonSubmit>
-              <SendIcon />
-            </ButtonSubmit>
+            <ButtonSubmit>{submitLoading ? <Spinner /> : <SendIcon />}</ButtonSubmit>
           </EmailWrapper>
 
           <input
@@ -64,12 +60,10 @@ const FormContact = () => {
             value={message}
             onChange={({ target }) => setMessage(target.value)}
           />
-        </>
+        </ContactForm>
       )}
-      {submited && <SubmitedMessage>Submited successful,thank you! ✔️</SubmitedMessage>}
-      <SocialButtons />
-    </ContactForm>
+    </AnimatePresence>
   )
 }
 
-export default FormContact
+export default Form

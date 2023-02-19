@@ -1,20 +1,8 @@
 import { motion } from "framer-motion"
 import styled from "styled-components"
 
-export const Title = styled.h1`
-  font-size: 2rem;
-  color: var(--primary-color);
-  font-weight: 900;
-`
 export const ContactForm = styled(motion.form)`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-
-  * {
-    max-width: 420px;
-  }
-
+  max-width: 420px;
   input,
   textarea {
     resize: none;
@@ -32,6 +20,7 @@ export const ContactForm = styled(motion.form)`
       box-shadow: 0px 0px 5px 1px var(--secondary-color);
     }
   }
+
   input::placeholder,
   textarea::placeholder {
     color: var(--secondary-color);
@@ -57,19 +46,31 @@ export const ButtonSubmit = styled.button`
     background-color: var(--secondary-color);
   }
 `
-export const EmailWrapper = styled.div`
+export const EmailWrapper = styled(motion.div)`
   display: flex;
-  gap: 0.2rem;
-  margin: 0 auto;
-  width: 100%;
   align-items: center;
+  gap: 0.2rem;
   input {
     flex-grow: 1;
   }
 `
-export const SubmitedMessage = styled.p`
-  font-size: 1.2rem;
-  color: #009900;
-  margin: 0.5rem 0.2rem;
-  font-weight: bolder;
+
+export const Spinner = styled.div`
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 5px solid #fff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 `

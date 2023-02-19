@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { ThemeProps } from "../../Interface/IThemeProps"
 
 export const ButtonMobileContainer = styled.button`
   height: 2.5rem;

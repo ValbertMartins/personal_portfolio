@@ -11,6 +11,7 @@ export const ButtonMobileContainer = styled.button`
   background-color: var(--primary-color);
   position: fixed;
   top: 1rem;
+  right: 1rem;
   user-select: none;
   display: flex;
   justify-content: center;

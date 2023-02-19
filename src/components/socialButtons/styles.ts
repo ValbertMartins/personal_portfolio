@@ -2,9 +2,9 @@ import { motion } from "framer-motion"
 import styled from "styled-components"
 
 export const ButtonsSocialContainer = styled.div`
-  margin: 1rem 0rem;
+  margin: 1rem auto;
   display: flex;
-  align-items: center;
+  width: 100%;
   gap: 1rem;
 `
 interface ButtonRedirectProps {
@@ -25,11 +25,11 @@ export const SocialButton = styled(motion.a)<ButtonRedirectProps>`
   border: 3px solid ${props => props.borderColor};
   font-weight: bold;
   cursor: pointer;
-  gap: 30px;
-  font-size: 1.2rem;
+  gap: 1rem;
+  font-size: 1.1rem;
 
   svg {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.2rem;
+    height: 1.2rem;
   }
 `

@@ -7,8 +7,11 @@ export const Title = styled.h1`
   font-weight: 900;
 `
 export const ContactForm = styled(motion.form)`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
   * {
-    width: 100%;
     max-width: 420px;
   }
 
@@ -18,11 +21,13 @@ export const ContactForm = styled(motion.form)`
     outline: none;
     border: 2px solid var(--primary-color);
     border-radius: 5px;
-    margin: 0.5rem 0rem;
+    margin: 0.5rem auto;
+    width: 100%;
     padding: 10px;
     min-height: 3rem;
     font-family: var(--default-font);
     transition: 300ms;
+
     :hover {
       box-shadow: 0px 0px 5px 1px var(--secondary-color);
     }
@@ -33,10 +38,7 @@ export const ContactForm = styled(motion.form)`
     opacity: 0.6;
   }
 `
-export const SubjectInput = styled.input``
 export const MessageInput = styled.textarea`
-  display: block;
-
   height: 10rem;
 `
 
@@ -55,12 +57,12 @@ export const ButtonSubmit = styled.button`
     background-color: var(--secondary-color);
   }
 `
-
 export const EmailWrapper = styled.div`
   display: flex;
   gap: 0.2rem;
+  margin: 0 auto;
+  width: 100%;
   align-items: center;
-
   input {
     flex-grow: 1;
   }

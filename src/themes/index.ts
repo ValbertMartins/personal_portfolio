@@ -12,7 +12,7 @@ export const Dark: ThemeProps = {
   colors: {
     PRIMARY: "#6215DD",
     SECONDARY: "#C28AFF",
-    BACKGROUND_COLOR: "#2F2828",
+    BACKGROUND_COLOR: "#333",
     TEXT_COLOR: "#FFF",
   },
 }

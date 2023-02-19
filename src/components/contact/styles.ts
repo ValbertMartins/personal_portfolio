@@ -8,12 +8,22 @@ export const Container = styled.section`
 export const ContentContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
-  max-width: 1200px;
+  max-width: 1025px;
   margin: 0 auto;
+  gap: 3rem;
   height: 100vh;
+  @media (max-width: 1025px) {
+    max-width: 820px;
+  }
+  @media (max-width: 830px) {
+    grid-template-columns: 1fr;
+  }
 `
 export const ContainerLogoContact = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
+  img {
+    max-width: 22rem;
+  }
 `

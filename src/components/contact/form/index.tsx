@@ -8,7 +8,6 @@ import {
   ContactForm,
   EmailWrapper,
   MessageInput,
-  SubjectInput,
   SubmitedMessage,
   Title,
 } from "./styles"
@@ -50,7 +49,7 @@ const FormContact = () => {
             </ButtonSubmit>
           </EmailWrapper>
 
-          <SubjectInput
+          <input
             type="text"
             name="subject"
             placeholder="Subject..."

@@ -15,15 +15,13 @@ export const HeaderContainer = styled.div`
   }
 `
 export const HeaderContent = styled.div`
-  max-width: 80%;
+  max-width: 95rem;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   padding: 2rem 1rem;
   font-size: 1.1rem;
   @media (max-width: 1025px) {
-    font-size: 1rem;
-  }
-  @media (max-width: 710px) {
+    max-width: 100%;
   }
 `

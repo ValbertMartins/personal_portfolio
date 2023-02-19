@@ -1,7 +1,7 @@
 import { ThemeProvider } from "styled-components"
+import { lazy, Suspense } from "react"
 import Home from "./components/home"
 import Header from "./components/header"
-import Projects from "./components/projects"
 import { Container } from "./styles/app"
 import { GlobalStyles } from "./styles/global"
 import { Light, Dark } from "./themes"
@@ -9,6 +9,7 @@ import Contact from "./components/contact"
 import { Routes, Route } from "react-router-dom"
 import AboutMe from "./components/about"
 import { useState } from "react"
+const Projects = lazy(() => import("./components/projects"))
 
 function App() {
   const [changeTheme, setChangeTheme] = useState(false)
@@ -31,7 +32,11 @@ function App() {
           />
           <Route
             path="/projects"
-            element={<Projects />}
+            element={
+              <Suspense fallback={<></>}>
+                <Projects />
+              </Suspense>
+            }
           />
           <Route
             path="/contact"

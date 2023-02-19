@@ -9,6 +9,8 @@ export const Container = styled(motion.div)`
   align-items: center;
   border: 1px solid black;
   border-radius: 30px;
+  opacity: 0;
+  pointer-events: none;
 `
 export const Circle = styled(motion.div)`
   height: 1.3rem;

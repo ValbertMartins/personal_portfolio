@@ -47,12 +47,13 @@ export const ContentModal = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 90%;
+  justify-content: center;
+  height: 80%;
   width: 100%;
   border-top-left-radius: 5rem;
   border-top-right-radius: 5rem;
   background-color: var(--primary-color);
-  font-size: 3rem;
+  font-size: 2rem;
   z-index: 5;
 
   a {

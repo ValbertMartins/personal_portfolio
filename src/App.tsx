@@ -5,11 +5,11 @@ import Header from "./components/header"
 import { Container } from "./styles/app"
 import { GlobalStyles } from "./styles/global"
 import { Light, Dark } from "./themes"
-import Contact from "./components/contact"
 import { Routes, Route } from "react-router-dom"
-import AboutMe from "./components/about"
 import { useState } from "react"
+const AboutMe = lazy(() => import("./components/about"))
 const Projects = lazy(() => import("./components/projects"))
+const Contact = lazy(() => import("./components/contact"))
 
 function App() {
   const [changeTheme, setChangeTheme] = useState(false)
@@ -28,7 +28,11 @@ function App() {
           />
           <Route
             path="/about"
-            element={<AboutMe />}
+            element={
+              <Suspense fallback={<></>}>
+                <AboutMe />
+              </Suspense>
+            }
           />
           <Route
             path="/projects"
@@ -40,7 +44,11 @@ function App() {
           />
           <Route
             path="/contact"
-            element={<Contact />}
+            element={
+              <Suspense fallback={<></>}>
+                <Contact />
+              </Suspense>
+            }
           />
         </Routes>
       </Container>

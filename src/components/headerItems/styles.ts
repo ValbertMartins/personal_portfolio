@@ -1,13 +1,19 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom"
 
-export const NavbarItem = styled(Link)`
-  color: var(--primary-color);
-  font-weight: 1000;
+interface NavbarItemProps {
+  color: string
+}
+
+export const NavbarItem = styled(Link)<NavbarItemProps>`
   margin: 0 1rem;
   cursor: pointer;
-  transition: 500ms;
   text-decoration: none;
+  font-weight: 1000;
+  color: ${props => {
+    console.log(props.color)
+    return props.color
+  }};
 
   :hover {
     color: var(--secondary-color);

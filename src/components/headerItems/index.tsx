@@ -1,11 +1,32 @@
 import { NavbarItem } from "./styles"
-const NavbarItems = () => {
+
+const NavbarItems = ({ color }: { color: string }) => {
   return (
     <>
-      <NavbarItem to="">Home</NavbarItem>
-      <NavbarItem to="about">About</NavbarItem>
-      <NavbarItem to="projects">Projects</NavbarItem>
-      <NavbarItem to="contact">Contact</NavbarItem>
+      <NavbarItem
+        color={color}
+        to="/"
+      >
+        Home
+      </NavbarItem>
+      <NavbarItem
+        color={color}
+        to="about"
+      >
+        About
+      </NavbarItem>
+      <NavbarItem
+        color={color}
+        to="projects"
+      >
+        Projects
+      </NavbarItem>
+      <NavbarItem
+        color={color}
+        to="contact"
+      >
+        Contact
+      </NavbarItem>
     </>
   )
 }

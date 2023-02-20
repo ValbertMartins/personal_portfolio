@@ -1,5 +1,5 @@
 import React, { useEffect, useState, SetStateAction, Dispatch } from "react"
-import ButtonHamburguer from "../buttonHamburguer"
+import MenuMobile from "../menuMobile"
 import ButtonTheme from "../buttonTheme"
 import HeaderItems from "../headerItems"
 import { HeaderContainer, HeaderContent } from "./styles"
@@ -19,6 +19,7 @@ const Header = ({ setChangeTheme, changeTheme }: Props) => {
     })
     return () => window.removeEventListener("resize", resizeEvent as any)
   }, [])
+
   return (
     <HeaderContainer>
       <HeaderContent>
@@ -28,11 +29,11 @@ const Header = ({ setChangeTheme, changeTheme }: Props) => {
         />
         <div>
           {windowSize <= 580 ? (
-            <ButtonHamburguer>
-              <HeaderItems />
-            </ButtonHamburguer>
+            <MenuMobile>
+              <HeaderItems color="#FFF" />
+            </MenuMobile>
           ) : (
-            <HeaderItems />
+            <HeaderItems color="#6215DD" />
           )}
         </div>
       </HeaderContent>

@@ -21,4 +21,5 @@ export const HeaderContent = styled.div`
   justify-content: space-between;
   padding: 2rem 1rem;
   font-size: 1.1rem;
+  color: var(--primary-color);
 `

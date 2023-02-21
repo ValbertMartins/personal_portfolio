@@ -32,7 +32,6 @@ export const projectList: ProjectProps[] = [
       "Social Media built-in using reactJS, Css modules, JWT to authentication, axios to consume API, and victory lib to provide graphs.",
     images: [
       "src/assets/images/projectsImages/project2/image1.png",
-      "src/assets/images/projectsImages/project2/image2.png",
       "src/assets/images/projectsImages/project2/image3.png",
       "src/assets/images/projectsImages/project2/image4.png",
       "src/assets/images/projectsImages/project2/image5.png",
@@ -41,6 +40,16 @@ export const projectList: ProjectProps[] = [
     links: {
       githubRepo: "https://github.com/ValbertMartins/Dogs-socialMedia-clone",
       deployLink: "https://dog-social-media.netlify.app/",
+    },
+  },
+
+  {
+    title: "Rest Api NodeJS",
+    description:
+      "Rest Api built-in nodeJS, express, MongoDB and Mongoose, Routes to login and register user using JWT token",
+    images: ["src/assets/images/projectsImages/project3/image1.png"],
+    links: {
+      githubRepo: "https://github.com/ValbertMartins/API_NODEJS-LOGIN-REGISTER-JWT",
     },
   },
 ]
